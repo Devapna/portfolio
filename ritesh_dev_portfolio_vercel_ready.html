@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ritesh Dev — Video Editor, Videographer &amp; Documentary Filmmaker</title>
+  <meta name="description" content="Portfolio of Ritesh Dev — Creative Video Editor, Videographer, Documentary Filmmaker, AI Content Creator, and Full-Stack Web Developer." />
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS Variables & Dynamic Neon Styling -->
+  <style>
+    :root {
+      --neon-1: #f967fb;
+      --neon-2: #53bc28;
+      --neon-3: #6958d5;
+    }
+
+    html, body {
+      background-color: #050508;
+      color: #ffffff;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050508;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Dynamic Neon Accent Utilities synced with JS CSS Variables */
+    .neon-dot-1 {
+      background-color: var(--neon-1);
+      box-shadow: 0 0 12px var(--neon-1);
+      transition: background-color 0.45s ease, box-shadow 0.45s ease;
+    }
+    .neon-dot-2 {
+      background-color: var(--neon-2);
+      box-shadow: 0 0 12px var(--neon-2);
+      transition: background-color 0.45s ease, box-shadow 0.45s ease;
+    }
+    .neon-dot-3 {
+      background-color: var(--neon-3);
+      box-shadow: 0 0 12px var(--neon-3);
+      transition: background-color 0.45s ease, box-shadow 0.45s ease;
+    }
+
+    .neon-text-1 {
+      color: var(--neon-1);
+      transition: color 0.45s ease;
+    }
+    .neon-text-2 {
+      color: var(--neon-2);
+      transition: color 0.45s ease;
+    }
+    .neon-text-3 {
+      color: var(--neon-3);
+      transition: color 0.45s ease;
+    }
+
+    .neon-hero-title {
+      text-shadow: 0 4px 28px rgba(0, 0, 0, 0.95), 0 0 42px color-mix(in srgb, var(--neon-1) 35%, transparent);
+      transition: text-shadow 0.45s ease;
+    }
+
+    .neon-nav-glow {
+      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.65), 0 0 24px color-mix(in srgb, var(--neon-1) 18%, transparent);
+      transition: box-shadow 0.45s ease;
+    }
+
+    .neon-btn-1 {
+      border-color: color-mix(in srgb, var(--neon-1) 50%, transparent);
+      box-shadow: 0 0 22px color-mix(in srgb, var(--neon-1) 22%, transparent);
+      transition: all 0.3s ease;
+    }
+    .neon-btn-1:hover {
+      border-color: color-mix(in srgb, var(--neon-1) 85%, transparent);
+      box-shadow: 0 0 30px color-mix(in srgb, var(--neon-1) 40%, transparent);
+    }
+
+    .neon-border-1 {
+      border-color: color-mix(in srgb, var(--neon-1) 40%, transparent);
+      transition: border-color 0.45s ease;
+    }
+    .neon-border-2 {
+      border-color: color-mix(in srgb, var(--neon-2) 40%, transparent);
+      transition: border-color 0.45s ease;
+    }
+    .neon-border-3 {
+      border-color: color-mix(in srgb, var(--neon-3) 40%, transparent);
+      transition: border-color 0.45s ease;
+    }
+
+    .neon-bar-1 {
+      background: linear-gradient(90deg, transparent, var(--neon-1), transparent);
+      transition: background 0.45s ease;
+    }
+    .neon-bar-2 {
+      background: linear-gradient(90deg, transparent, var(--neon-2), transparent);
+      transition: background 0.45s ease;
+    }
+    .neon-bar-3 {
+      background: linear-gradient(90deg, transparent, var(--neon-3), transparent);
+      transition: background 0.45s ease;
+    }
+
+    .neon-metric-1 {
+      text-shadow: 0 0 20px color-mix(in srgb, var(--neon-1) 55%, transparent);
+      transition: text-shadow 0.45s ease;
+    }
+    .neon-metric-2 {
+      text-shadow: 0 0 20px color-mix(in srgb, var(--neon-2) 55%, transparent);
+      transition: text-shadow 0.45s ease;
+    }
+    .neon-metric-3 {
+      text-shadow: 0 0 20px color-mix(in srgb, var(--neon-3) 55%, transparent);
+      transition: text-shadow 0.45s ease;
+    }
+
+    /* Toast transitions */
+    .toast-hidden {
+      opacity: 0;
+      transform: translateY(14px);
+      pointer-events: none;
+    }
+    .toast-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  </style>
+</head>
+
+<body class="relative min-h-screen w-full bg-[#050508] text-white selection:bg-fuchsia-500/30 selection:text-white antialiased">
+  <!-- ======================================================================
+       Fixed Full-Viewport 60fps 3D Neon Tubes Canvas
+  ====================================================================== -->
+  <canvas id="neonCanvas" aria-hidden="true" class="fixed inset-0 w-full h-full block z-0 pointer-events-none"></canvas>
+
+  <!-- Subtle atmospheric vignette for high-contrast readability -->
+  <div aria-hidden="true" class="fixed inset-0 z-[1] pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/55"></div>
+
+  <!-- ======================================================================
+       Scrollable Glassmorphic Foreground
+  ====================================================================== -->
+  <div class="relative z-10 w-full">
+
+    <!-- ====================================================================
+         1. Floating Glassmorphic Navbar
+    ==================================================================== -->
+    <header data-stop-bg class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-6xl">
+      <nav class="neon-nav-glow flex items-center justify-between px-4 sm:px-6 py-3 rounded-full bg-black/55 backdrop-blur-md border border-white/15">
+        <!-- Brand Monogram -->
+        <a href="#hero" class="flex items-center gap-2.5 text-sm sm:text-base font-bold tracking-wider uppercase text-white">
+          <span class="neon-dot-1 w-2.5 h-2.5 rounded-full"></span>
+          <span class="tracking-tight">RITESH <span class="text-white/60">DEV</span></span>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="#about" class="px-4 py-1.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">About</a>
+          <a href="#experience" class="px-4 py-1.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Experience</a>
+          <a href="#skills" class="px-4 py-1.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Skills</a>
+          <a href="#projects" class="px-4 py-1.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Projects</a>
+          <a href="#contact" class="px-4 py-1.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Contact</a>
+        </div>
+
+        <!-- Right Controls: Randomize Neon + Lock Toggle + Mobile Menu -->
+        <div class="flex items-center gap-2">
+          <button
+            id="randomizeBtn"
+            type="button"
+            class="neon-btn-1 flex items-center gap-1.5 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white bg-white/10 hover:bg-white/20 border rounded-full active:scale-95 cursor-pointer"
+            title="Randomize 3D neon tube and light colors"
+          >
+            <!-- Sparkles SVG -->
+            <svg class="neon-text-1 w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+            </svg>
+            <span class="hidden sm:inline">Randomize Neon</span>
+            <span class="sm:hidden">Neon</span>
+          </button>
+
+          <button
+            id="lockToggleBtn"
+            type="button"
+            class="p-2 rounded-full border bg-white/10 border-white/20 text-white hover:bg-white/20 transition-all duration-200 cursor-pointer"
+            title="Background click-to-randomize: UNLOCKED (ON)"
+            aria-label="Toggle lock for background click randomization"
+          >
+            <!-- Unlocked SVG (shown by default) -->
+            <svg id="iconUnlocked" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+            </svg>
+            <!-- Locked SVG (hidden by default) -->
+            <svg id="iconLocked" class="w-3.5 h-3.5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </button>
+
+          <button
+            id="mobileMenuBtn"
+            type="button"
+            class="lg:hidden p-2 rounded-full bg-white/10 border border-white/15 text-white hover:bg-white/20 transition-colors cursor-pointer"
+            aria-label="Toggle navigation menu"
+          >
+            <svg id="iconMenuOpen" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+            <svg id="iconMenuClose" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Responsive Mobile Dropdown Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden mt-2 p-3 rounded-2xl bg-black/85 backdrop-blur-md border border-white/15 shadow-2xl flex-col gap-1">
+        <a href="#about" class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-white/85 hover:text-white hover:bg-white/10 rounded-xl transition-colors">About</a>
+        <a href="#experience" class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-white/85 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Experience</a>
+        <a href="#skills" class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-white/85 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Skills</a>
+        <a href="#projects" class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-white/85 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Projects</a>
+        <a href="#contact" class="mobile-nav-link px-4 py-2.5 text-sm font-medium text-white/85 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Contact</a>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         Auto-Fading Hex Palette Toast (Bottom-Right)
+    ==================================================================== -->
+    <div
+      id="paletteToast"
+      data-stop-bg
+      role="status"
+      aria-live="polite"
+      class="toast-hidden fixed bottom-5 right-5 z-50 flex items-center gap-3 px-4 py-2.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 shadow-2xl transition-all duration-300"
+    >
+      <!-- Palette SVG -->
+      <svg class="w-4 h-4 text-white/80 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+      </svg>
+      <div id="toastSwatches" class="flex items-center gap-2.5"></div>
+    </div>
+
+    <!-- ====================================================================
+         2. Full-Screen Hero Section
+    ==================================================================== -->
+    <section id="hero" class="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-4 sm:px-6 pt-28 pb-24">
+      <div class="max-w-5xl mx-auto flex flex-col items-center gap-5 sm:gap-6">
+        <!-- Location & Experience Badge -->
+        <div data-stop-bg class="neon-border-2 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/50 backdrop-blur-md border text-xs sm:text-sm text-white/90 shadow-lg">
+          <svg class="neon-text-2 w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Ghaziabad, Uttar Pradesh, India &bull; 6+ Years Experience</span>
+        </div>
+
+        <!-- Bold Display Heading & Subtitle -->
+        <div class="space-y-3 select-none">
+          <h1 class="neon-hero-title text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-[0.95]">
+            RITESH DEV
+          </h1>
+          <h2 class="text-sm sm:text-xl md:text-2xl lg:text-3xl font-semibold uppercase tracking-[0.14em] text-white/95 drop-shadow-[0_2px_20px_rgba(0,0,0,0.95)]">
+            VIDEO EDITOR &bull; VIDEOGRAPHER &bull; DOCUMENTARY FILMMAKER
+          </h2>
+        </div>
+
+        <!-- Concise Tagline -->
+        <p class="text-white/85 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed drop-shadow-[0_2px_16px_rgba(0,0,0,0.95)]">
+          6 years of end-to-end video production, documentary storytelling, AI-assisted visual workflows, and full-stack web development.
+        </p>
+
+        <!-- Primary CTAs -->
+        <div data-stop-bg class="mt-2 flex flex-wrap items-center justify-center gap-3.5 sm:gap-4">
+          <a
+            href="#projects"
+            class="neon-btn-1 group flex items-center gap-2 px-7 py-3.5 bg-white/15 hover:bg-white/25 backdrop-blur-md border rounded-full text-white font-semibold text-sm sm:text-base"
+          >
+            <span>Explore Work</span>
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </a>
+
+          <a
+            href="#contact"
+            class="group flex items-center gap-2 px-7 py-3.5 bg-black/50 hover:bg-white/15 backdrop-blur-md border border-white/20 rounded-full text-white/95 font-semibold text-sm sm:text-base transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+          >
+            <svg class="w-4 h-4 text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <span>Get in Touch</span>
+          </a>
+        </div>
+
+        <!-- Quick YouTube Channel Pill Links -->
+        <div data-stop-bg class="mt-3 flex flex-wrap items-center justify-center gap-2.5">
+          <a href="https://youtube.com/@devbro.creator" target="_blank" rel="noreferrer" class="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 hover:bg-white/15 backdrop-blur-md border border-white/15 text-xs sm:text-sm text-white/85 hover:text-white transition-all duration-200">
+            <svg class="w-3.5 h-3.5 text-red-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+              <path d="m10 15 5-3-5-3z" />
+            </svg>
+            <span>@devbro.creator</span>
+          </a>
+
+          <a href="https://youtube.com/@redacteddocumentary" target="_blank" rel="noreferrer" class="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 hover:bg-white/15 backdrop-blur-md border border-white/15 text-xs sm:text-sm text-white/85 hover:text-white transition-all duration-200">
+            <svg class="w-3.5 h-3.5 text-red-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+              <path d="m10 15 5-3-5-3z" />
+            </svg>
+            <span>@redacteddocumentary</span>
+          </a>
+
+          <a href="https://youtube.com/@radhasoamisimran" target="_blank" rel="noreferrer" class="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 hover:bg-white/15 backdrop-blur-md border border-white/15 text-xs sm:text-sm text-white/85 hover:text-white transition-all duration-200">
+            <svg class="w-3.5 h-3.5 text-red-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+              <path d="m10 15 5-3-5-3z" />
+            </svg>
+            <span>@radhasoamisimran</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Subtle Bottom Interactive Hint -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/65 animate-pulse pointer-events-none select-none w-full px-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" />
+        </svg>
+        <span class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-center drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
+          Move cursor to guide neon &bull; Click open space to randomize
+        </span>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Main Scrollable Content Container
+    ==================================================================== -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 sm:space-y-32 pb-24">
+
+      <!-- ==================================================================
+           3. About, Highlights & Education Section
+      ================================================================== -->
+      <section id="about" class="scroll-mt-28 space-y-6">
+        <!-- Professional Summary + 4 Key Metric Cards -->
+        <div data-stop-bg class="bg-black/50 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.55)]">
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+            <div class="space-y-2 max-w-2xl">
+              <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/65">
+                <svg class="neon-text-1 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M7 3v18" /><path d="M3 7.5h4" /><path d="M3 12h18" /><path d="M3 16.5h4" />
+                  <path d="M17 3v18" /><path d="M17 7.5h4" /><path d="M17 16.5h4" />
+                </svg>
+                <span>About Me</span>
+              </div>
+              <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+                Visual storytelling meets technical craft.
+              </h3>
+            </div>
+            <div class="text-xs uppercase tracking-widest text-white/55">
+              End-to-End Production &amp; Digital Media
+            </div>
+          </div>
+
+          <p class="text-white/85 text-base sm:text-lg leading-relaxed max-w-4xl mb-10">
+            Creative Video Editor, Videographer and Documentary Content Creator with 6 years of hands-on experience in video editing, cinematography, digital storytelling and content production. Experienced in independently managing end-to-end video production, including concept development, scripting, camera operations, editing, visual effects and publishing. Skilled in wedding cinematography, documentary creation, YouTube content and social media production. Combines creative storytelling with technical knowledge, AI-assisted workflows and digital media expertise.
+          </p>
+
+          <!-- 4 Key Metric Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="group p-5 rounded-2xl bg-black/40 hover:bg-white/[0.08] border border-white/10 hover:border-white/25 transition-all duration-300">
+              <div class="flex items-center justify-between mb-3">
+                <span class="neon-metric-1 text-2xl sm:text-3xl font-black tracking-tight text-white">6+ Years</span>
+                <div class="neon-border-1 p-2 rounded-xl bg-white/10 border group-hover:scale-105 transition-transform">
+                  <svg class="neon-text-1 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z" />
+                    <path d="m6.2 5.3 3.1 3.9" /><path d="m12.4 3.4 3.1 4" />
+                    <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+                  </svg>
+                </div>
+              </div>
+              <p class="text-xs sm:text-sm text-white/75 leading-relaxed">Hands-on Production</p>
+            </div>
+
+            <div class="group p-5 rounded-2xl bg-black/40 hover:bg-white/[0.08] border border-white/10 hover:border-white/25 transition-all duration-300">
+              <div class="flex items-center justify-between mb-3">
+                <span class="neon-metric-2 text-2xl sm:text-3xl font-black tracking-tight text-white">500+</span>
+                <div class="neon-border-2 p-2 rounded-xl bg-white/10 border group-hover:scale-105 transition-transform">
+                  <svg class="neon-text-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
+                    <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
+                    <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
+                  </svg>
+                </div>
+              </div>
+              <p class="text-xs sm:text-sm text-white/75 leading-relaxed">Social Posts, Videos &amp; Shorts</p>
+            </div>
+
+            <div class="group p-5 rounded-2xl bg-black/40 hover:bg-white/[0.08] border border-white/10 hover:border-white/25 transition-all duration-300">
+              <div class="flex items-center justify-between mb-3">
+                <span class="neon-metric-3 text-2xl sm:text-3xl font-black tracking-tight text-white">3</span>
+                <div class="neon-border-3 p-2 rounded-xl bg-white/10 border group-hover:scale-105 transition-transform">
+                  <svg class="neon-text-3 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                    <path d="m10 15 5-3-5-3z" />
+                  </svg>
+                </div>
+              </div>
+              <p class="text-xs sm:text-sm text-white/75 leading-relaxed">YouTube Channels</p>
+            </div>
+
+            <div class="group p-5 rounded-2xl bg-black/40 hover:bg-white/[0.08] border border-white/10 hover:border-white/25 transition-all duration-300">
+              <div class="flex items-center justify-between mb-3">
+                <span class="neon-metric-1 text-2xl sm:text-3xl font-black tracking-tight text-white">MCA</span>
+                <div class="neon-border-1 p-2 rounded-xl bg-white/10 border group-hover:scale-105 transition-transform">
+                  <svg class="neon-text-1 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                    <path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                  </svg>
+                </div>
+              </div>
+              <p class="text-xs sm:text-sm text-white/75 leading-relaxed">Pursuing &bull; 2027</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education, Certifications, Core Strengths & Languages Grid -->
+        <div data-stop-bg class="bg-black/50 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.55)] grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <!-- Left: Education & Certifications -->
+          <div class="space-y-6">
+            <div class="flex items-center gap-2.5">
+              <div class="p-2 rounded-xl bg-white/10 border border-white/15">
+                <svg class="neon-text-2 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                  <path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                </svg>
+              </div>
+              <h4 class="text-xl sm:text-2xl font-bold text-white">Education &amp; Certifications</h4>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                  <h5 class="font-semibold text-white">Master of Computer Applications (MCA)</h5>
+                  <span class="neon-border-1 text-[11px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-white/10 border text-white/90">
+                    Pursuing &bull; Sept 2027
+                  </span>
+                </div>
+                <p class="text-sm text-white/70">Sikkim Manipal University (Expected Completion: September 2027)</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                  <h5 class="font-semibold text-white">Bachelor&apos;s Degree in Political Science</h5>
+                  <span class="text-[11px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-white/10 text-white/80">
+                    Graduate
+                  </span>
+                </div>
+                <p class="text-sm text-white/70">Nalanda College, Bihar Sharif</p>
+              </div>
+            </div>
+
+            <div class="pt-2 space-y-3">
+              <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white/65">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+                <span>Certifications</span>
+              </div>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5 text-sm text-white/85">
+                  <span class="neon-dot-2 mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Advanced Communication Skills</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-white/85">
+                  <span class="neon-dot-2 mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Data Science for Business</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-white/85">
+                  <span class="neon-dot-2 mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>AI-related learning &amp; practical exploration</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: Languages & Core Strengths -->
+          <div class="space-y-6">
+            <div class="space-y-3">
+              <div class="flex items-center gap-2.5">
+                <div class="p-2 rounded-xl bg-white/10 border border-white/15">
+                  <svg class="neon-text-3 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                    <path d="M2 12h20" />
+                  </svg>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-bold text-white">Languages</h4>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+                  <p class="font-semibold text-white text-sm">Hindi</p>
+                  <p class="text-xs text-white/65 mt-0.5">Native</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+                  <p class="font-semibold text-white text-sm">Bhojpuri</p>
+                  <p class="text-xs text-white/65 mt-0.5">Fluent</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+                  <p class="font-semibold text-white text-sm">English</p>
+                  <p class="text-xs text-white/65 mt-0.5">Working Proficiency</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-1">
+              <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white/65">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+                </svg>
+                <span>Core Strengths</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Problem Solving</span>
+                <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Analytical Thinking</span>
+                <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Creative Direction</span>
+                <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Research</span>
+                <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Public Speaking</span>
+                <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Communication</span>
+                <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Leadership</span>
+                <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Fast Learning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           4. Experience Timeline Section
+      ================================================================== -->
+      <section id="experience" class="scroll-mt-28">
+        <div class="mb-8 sm:mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 drop-shadow">
+              <svg class="neon-text-3 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                <rect width="20" height="14" x="2" y="6" rx="2" />
+              </svg>
+              <span>Career Journey</span>
+            </div>
+            <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
+              Professional Experience
+            </h3>
+          </div>
+          <p class="text-sm sm:text-base text-white/80 max-w-md drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            6 years of independent production, community growth, and documentary filmmaking.
+          </p>
+        </div>
+
+        <!-- Vertical Glowing Timeline -->
+        <div class="relative space-y-6 before:hidden md:before:block before:absolute before:left-6 before:top-4 before:bottom-4 before:w-px before:bg-gradient-to-b before:from-white/35 before:via-white/15 before:to-transparent">
+
+          <!-- Role 1 -->
+          <div data-stop-bg class="relative md:pl-16">
+            <span class="neon-dot-1 hidden md:flex absolute left-[18px] top-8 w-3.5 h-3.5 rounded-full border-2 border-[#050508]"></span>
+            <article class="bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_18px_50px_rgba(0,0,0,0.55)] transition-all duration-300">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-5">
+                <div>
+                  <h4 class="text-xl sm:text-2xl font-bold text-white">Freelance Video Editor &amp; Videographer</h4>
+                  <p class="text-sm sm:text-base text-white/75 mt-0.5">Independent Paid Projects</p>
+                </div>
+                <span class="neon-border-1 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border text-xs font-medium text-white/95 shrink-0 self-start">
+                  <svg class="neon-text-1 w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" />
+                  </svg>
+                  2020 &ndash; Present
+                </span>
+              </div>
+              <ul class="space-y-3 text-sm sm:text-base text-white/85 leading-relaxed">
+                <li class="flex items-start gap-3">
+                  <span class="neon-dot-1 mt-2 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Edit wedding films, cinematic highlights and event videos; handle camera operations, lighting and on-location shooting.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="neon-dot-1 mt-2 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Create documentary videos involving research, scripting, storytelling and editing.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="neon-dot-1 mt-2 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Independently manage end-to-end post-production, performing colour correction, transitions, audio sync and VFX.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="neon-dot-1 mt-2 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Create YouTube videos, high-CTR thumbnails and social media content.</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Role 2 -->
+          <div data-stop-bg class="relative md:pl-16">
+            <span class="neon-dot-2 hidden md:flex absolute left-[18px] top-8 w-3.5 h-3.5 rounded-full border-2 border-[#050508]"></span>
+            <article class="bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_18px_50px_rgba(0,0,0,0.55)] transition-all duration-300">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-5">
+                <div>
+                  <h4 class="text-xl sm:text-2xl font-bold text-white">Volunteer Video Editor &amp; Digital Content Creator</h4>
+                  <p class="text-sm sm:text-base text-white/75 mt-0.5">Radha Soami Satsang Beas (RSSB)</p>
+                </div>
+                <span class="neon-border-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border text-xs font-medium text-white/95 shrink-0 self-start">
+                  <svg class="neon-text-2 w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" />
+                  </svg>
+                  2021 &ndash; Present
+                </span>
+              </div>
+              <ul class="space-y-3 text-sm sm:text-base text-white/85 leading-relaxed">
+                <li class="flex items-start gap-3">
+                  <span class="neon-dot-2 mt-2 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Voluntarily contribute to video production and digital content creation; handle shooting, editing, creative direction and publishing.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="neon-dot-2 mt-2 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Create documentary, spiritual and informational content; design thumbnails and supporting digital creatives.</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Role 3 -->
+          <div data-stop-bg class="relative md:pl-16">
+            <span class="neon-dot-3 hidden md:flex absolute left-[18px] top-8 w-3.5 h-3.5 rounded-full border-2 border-[#050508]"></span>
+            <article class="bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_18px_50px_rgba(0,0,0,0.55)] transition-all duration-300">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-5">
+                <div>
+                  <h4 class="text-xl sm:text-2xl font-bold text-white">Digital Community Manager</h4>
+                  <p class="text-sm sm:text-base text-white/75 mt-0.5">Satsang Vihar &amp; Radha Soami</p>
+                </div>
+                <span class="neon-border-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border text-xs font-medium text-white/95 shrink-0 self-start">
+                  <svg class="neon-text-3 w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" />
+                  </svg>
+                  2021 &ndash; Present
+                </span>
+              </div>
+              <ul class="space-y-3 text-sm sm:text-base text-white/85 leading-relaxed">
+                <li class="flex items-start gap-3">
+                  <span class="neon-dot-3 mt-2 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Managed and developed multi-platform digital communities; created 500+ social media posts, videos, shorts and stories.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="neon-dot-3 mt-2 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Handled audience queries, feedback and digital communication; collaborated with voice artists, editors and content creators.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="neon-dot-3 mt-2 w-1.5 h-1.5 rounded-full shrink-0"></span>
+                  <span>Designed thumbnails and optimized YouTube content using SEO.</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           5. Skills Section (4 Categories — 2x2 Grid)
+      ================================================================== -->
+      <section id="skills" class="scroll-mt-28">
+        <div class="mb-8 sm:mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 drop-shadow">Capabilities</span>
+            <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
+              Technical &amp; Creative Skills
+            </h3>
+          </div>
+          <p class="text-sm sm:text-base text-white/80 max-w-md drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            Bridging cinema-grade post-production, generative AI workflows, and modern full-stack software development.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Category 1 -->
+          <div data-stop-bg class="relative overflow-hidden bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_16px_48px_rgba(0,0,0,0.55)] transition-all duration-300">
+            <div class="neon-bar-1 absolute top-0 left-0 right-0 h-[2px] opacity-80"></div>
+            <div class="flex items-center gap-3.5 mb-6">
+              <div class="neon-border-1 p-2.5 rounded-xl bg-white/10 border">
+                <svg class="neon-text-1 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z" />
+                  <path d="m6.2 5.3 3.1 3.9" /><path d="m12.4 3.4 3.1 4" />
+                  <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg sm:text-xl font-bold text-white">Video &amp; Creative Production</h4>
+                <p class="text-xs text-white/60">Filmmaking, Editing &amp; Post</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Adobe Premiere Pro</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">After Effects</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Photoshop</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">CapCut</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">VN Editor</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">InShot</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Motion Graphics</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Video Editing</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Colour Grading</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Cinematography</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Camera Handling</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Documentary Filmmaking</span>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div data-stop-bg class="relative overflow-hidden bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_16px_48px_rgba(0,0,0,0.55)] transition-all duration-300">
+            <div class="neon-bar-2 absolute top-0 left-0 right-0 h-[2px] opacity-80"></div>
+            <div class="flex items-center gap-3.5 mb-6">
+              <div class="neon-border-2 p-2.5 rounded-xl bg-white/10 border">
+                <svg class="neon-text-2 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="16" height="16" x="4" y="4" rx="2" />
+                  <rect width="6" height="6" x="9" y="9" rx="1" />
+                  <path d="M15 2v2" /><path d="M15 20v2" /><path d="M2 15h2" /><path d="M2 9h2" />
+                  <path d="M20 15h2" /><path d="M20 9h2" /><path d="M9 2v2" /><path d="M9 20v2" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg sm:text-xl font-bold text-white">Design &amp; AI Workflows</h4>
+                <p class="text-xs text-white/60">Visual Systems &amp; Generative AI</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">UI/UX Design</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Graphic Design</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">AI-Assisted Content Creation</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Generative AI</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Prompt Engineering</span>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div data-stop-bg class="relative overflow-hidden bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_16px_48px_rgba(0,0,0,0.55)] transition-all duration-300">
+            <div class="neon-bar-3 absolute top-0 left-0 right-0 h-[2px] opacity-80"></div>
+            <div class="flex items-center gap-3.5 mb-6">
+              <div class="neon-border-3 p-2.5 rounded-xl bg-white/10 border">
+                <svg class="neon-text-3 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m18 16 4-4-4-4" /><path d="m6 8-4 4 4 4" /><path d="m14.5 4-5 16" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg sm:text-xl font-bold text-white">Programming &amp; Web Development</h4>
+                <p class="text-xs text-white/60">Full-Stack Engineering</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Java</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Python</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">JavaScript</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">React.js</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">HTML5</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">CSS3</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Tailwind CSS</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Node.js</span>
+            </div>
+          </div>
+
+          <!-- Category 4 -->
+          <div data-stop-bg class="relative overflow-hidden bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_16px_48px_rgba(0,0,0,0.55)] transition-all duration-300">
+            <div class="neon-bar-1 absolute top-0 left-0 right-0 h-[2px] opacity-80"></div>
+            <div class="flex items-center gap-3.5 mb-6">
+              <div class="neon-border-1 p-2.5 rounded-xl bg-white/10 border">
+                <svg class="neon-text-1 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+                  <path d="M3 12A9 3 0 0 0 21 12" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg sm:text-xl font-bold text-white">Database, Tools &amp; Platforms</h4>
+                <p class="text-xs text-white/60">Data, APIs &amp; Distribution</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">SQL</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">MongoDB</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">GitHub</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">REST APIs</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">YouTube Studio</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Instagram</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Facebook</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Telegram</span>
+              <span class="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 bg-white/[0.07] hover:bg-white/15 border border-white/15 rounded-full transition-colors">Canva</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           6. Filterable Projects Section
+      ================================================================== -->
+      <section id="projects" class="scroll-mt-28">
+        <div class="mb-8 sm:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 drop-shadow">Portfolio Showcase</span>
+            <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
+              Selected Projects
+            </h3>
+          </div>
+
+          <!-- Interactive Filter Tabs -->
+          <div data-stop-bg class="inline-flex flex-wrap items-center gap-2 p-1.5 rounded-full bg-black/55 backdrop-blur-md border border-white/15 self-start md:self-auto">
+            <button type="button" data-filter="All" class="project-filter-btn px-4 py-1.5 text-xs sm:text-sm font-medium rounded-full bg-white text-black shadow-md transition-all duration-200 cursor-pointer">
+              All
+            </button>
+            <button type="button" data-filter="Creative & AI" class="project-filter-btn px-4 py-1.5 text-xs sm:text-sm font-medium rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer">
+              Creative &amp; AI
+            </button>
+            <button type="button" data-filter="Tech & Web" class="project-filter-btn px-4 py-1.5 text-xs sm:text-sm font-medium rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer">
+              Tech &amp; Web
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Project 1 (Featured) -->
+          <article data-stop-bg data-categories="Creative & AI" data-featured="true" class="project-card md:col-span-2 group relative bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.55)] transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div class="neon-bar-1 absolute top-0 left-0 right-0 h-[2px] opacity-80 group-hover:opacity-100"></div>
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span class="neon-border-1 px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/10 border text-white/95">
+                  Creative &amp; AI
+                </span>
+                <span class="text-xs font-mono text-white/55">AI Film Series &bull; @devbro.creator</span>
+              </div>
+              <h4 class="text-2xl sm:text-3xl font-bold text-white mb-3">Dreams Between Two Worlds</h4>
+              <p class="text-sm sm:text-base text-white/80 leading-relaxed mb-6 max-w-3xl">
+                Directed, edited and composited Episode 01 (&ldquo;The First Dream&rdquo;) with custom bioluminescent VFX and colour grading.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">AI Filmmaking</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">After Effects</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Bioluminescent VFX</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Colour Grading</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Premiere Pro</span>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center">
+              <a href="https://youtube.com/@devbro.creator" target="_blank" rel="noreferrer" class="neon-btn-1 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-white/15 hover:bg-white/25 border rounded-full">
+                <svg class="neon-text-1 w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 3 20 12 6 21 6 3" />
+                </svg>
+                <span>Watch on @devbro.creator</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6" /><path d="M10 14 21 3" />
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article data-stop-bg data-categories="Tech & Web" class="project-card group relative bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.55)] transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div class="neon-bar-2 absolute top-0 left-0 right-0 h-[2px] opacity-80 group-hover:opacity-100"></div>
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span class="neon-border-2 px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/10 border text-white/95">
+                  Tech &amp; Web
+                </span>
+                <span class="text-xs font-mono text-white/55">Web Application</span>
+              </div>
+              <h4 class="text-2xl sm:text-3xl font-bold text-white mb-3">InvAssist PRO</h4>
+              <p class="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
+                Inventory and billing web application built with modern responsive UI for streamlined stock tracking and invoicing.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">React.js</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">JavaScript</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Tailwind CSS</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Responsive UI</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article data-stop-bg data-categories="Tech & Web" class="project-card group relative bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.55)] transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div class="neon-bar-3 absolute top-0 left-0 right-0 h-[2px] opacity-80 group-hover:opacity-100"></div>
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span class="neon-border-3 px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/10 border text-white/95">
+                  Tech &amp; Web
+                </span>
+                <span class="text-xs font-mono text-white/55">AI &amp; FinTech Concept</span>
+              </div>
+              <h4 class="text-2xl sm:text-3xl font-bold text-white mb-3">AI Trading Scanner &amp; Alert Platform</h4>
+              <p class="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
+                Market analysis and real-time alert generation concept combining automated scanning logic with actionable trading signals.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Python</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">REST APIs</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Market Analysis</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Real-Time Alerts</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article data-stop-bg data-categories="Tech & Web" class="project-card group relative bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.55)] transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div class="neon-bar-1 absolute top-0 left-0 right-0 h-[2px] opacity-80 group-hover:opacity-100"></div>
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span class="neon-border-1 px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/10 border text-white/95">
+                  Tech &amp; Web
+                </span>
+                <span class="text-xs font-mono text-white/55">Data Management Concept</span>
+              </div>
+              <h4 class="text-2xl sm:text-3xl font-bold text-white mb-3">Arghya-Praswasti Record System</h4>
+              <p class="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
+                Digital record management concept with structured data handling for organized archival and quick retrieval.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">SQL</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">MongoDB</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Structured Data</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Node.js</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article data-stop-bg data-categories="Creative & AI,Tech & Web" class="project-card group relative bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.55)] transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div class="neon-bar-2 absolute top-0 left-0 right-0 h-[2px] opacity-80 group-hover:opacity-100"></div>
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="neon-border-2 px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/10 border text-white/95">
+                    Creative &amp; AI
+                  </span>
+                  <span class="neon-border-3 px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/10 border text-white/95">
+                    Tech &amp; Web
+                  </span>
+                </div>
+                <span class="text-xs font-mono text-white/55">AR Game Concept</span>
+              </div>
+              <h4 class="text-2xl sm:text-3xl font-bold text-white mb-3">AR Realm</h4>
+              <p class="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
+                Endless multiplayer augmented reality game concept blending real-world spatial immersion with interactive game mechanics.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Augmented Reality</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Multiplayer</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">Creative Direction</span>
+                <span class="px-3 py-1 text-xs font-medium text-white/85 bg-white/[0.07] border border-white/10 rounded-full">UI/UX Design</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           7. Contact Section
+      ================================================================== -->
+      <section id="contact" class="scroll-mt-28">
+        <div data-stop-bg class="bg-black/50 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_24px_64px_rgba(0,0,0,0.6)]">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+            <!-- Left Column: Direct Details & Social Links -->
+            <div class="space-y-6">
+              <div class="space-y-3">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-white/65">Get in Touch</span>
+                <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+                  Let&apos;s collaborate on your next project.
+                </h3>
+                <p class="text-white/80 text-base leading-relaxed">
+                  Available for video editing, documentary production, cinematography, AI-assisted content workflows, and web development projects.
+                </p>
+              </div>
+
+              <!-- Direct Contact Cards -->
+              <div class="space-y-3">
+                <!-- Email -->
+                <div class="p-4 rounded-2xl bg-black/40 border border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="p-2.5 rounded-xl bg-white/10 shrink-0">
+                      <svg class="neon-text-1 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                      </svg>
+                    </div>
+                    <div class="min-w-0">
+                      <p class="text-[11px] uppercase tracking-wider text-white/55">Email</p>
+                      <a href="mailto:riteshdeevseth@gmail.com" class="text-sm sm:text-base font-medium text-white hover:underline truncate block">
+                        riteshdeevseth@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    data-copy="riteshdeevseth@gmail.com"
+                    class="copy-btn inline-flex items-center justify-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-full bg-white/15 hover:bg-white/25 border border-white/20 text-white transition-all shrink-0 cursor-pointer"
+                  >
+                    <svg class="copy-icon w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                    </svg>
+                    <svg class="check-icon hidden w-3.5 h-3.5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    <span class="copy-label">Copy</span>
+                  </button>
+                </div>
+
+                <!-- Phone -->
+                <div class="p-4 rounded-2xl bg-black/40 border border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="p-2.5 rounded-xl bg-white/10 shrink-0">
+                      <svg class="neon-text-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                      </svg>
+                    </div>
+                    <div class="min-w-0">
+                      <p class="text-[11px] uppercase tracking-wider text-white/55">Phone</p>
+                      <a href="tel:+919341952305" class="text-sm sm:text-base font-medium text-white hover:underline block">
+                        +91-9341952305
+                      </a>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    data-copy="+91-9341952305"
+                    class="copy-btn inline-flex items-center justify-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-full bg-white/15 hover:bg-white/25 border border-white/20 text-white transition-all shrink-0 cursor-pointer"
+                  >
+                    <svg class="copy-icon w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                    </svg>
+                    <svg class="check-icon hidden w-3.5 h-3.5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    <span class="copy-label">Copy</span>
+                  </button>
+                </div>
+
+                <!-- Location -->
+                <div class="p-4 rounded-2xl bg-black/40 border border-white/15 flex items-center gap-3">
+                  <div class="p-2.5 rounded-xl bg-white/10 shrink-0">
+                    <svg class="neon-text-3 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-[11px] uppercase tracking-wider text-white/55">Location</p>
+                    <p class="text-sm sm:text-base font-medium text-white">Ghaziabad, Uttar Pradesh, India</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social & Channels -->
+              <div class="pt-1 space-y-3">
+                <p class="text-xs uppercase tracking-widest text-white/55">Social &amp; Channels</p>
+                <div class="flex flex-wrap gap-2.5">
+                  <a href="https://linkedin.com/in/ritesh-dev-69b37137a" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                      <rect width="4" height="12" x="2" y="9" />
+                      <circle cx="4" cy="4" r="2" />
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+
+                  <a href="https://youtube.com/@devbro.creator" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                      <path d="m10 15 5-3-5-3z" />
+                    </svg>
+                    <span>@devbro.creator</span>
+                  </a>
+
+                  <a href="https://youtube.com/@redacteddocumentary" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                      <path d="m10 15 5-3-5-3z" />
+                    </svg>
+                    <span>@redacteddocumentary</span>
+                  </a>
+
+                  <a href="https://youtube.com/@radhasoamisimran" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                      <path d="m10 15 5-3-5-3z" />
+                    </svg>
+                    <span>@radhasoamisimran</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Contact Form -->
+            <div class="p-6 sm:p-7 rounded-2xl bg-black/40 border border-white/10">
+              <form id="contactForm" class="space-y-4">
+                <div>
+                  <label for="contact-name" class="block text-xs font-medium uppercase tracking-wider text-white/75 mb-1.5">Name</label>
+                  <input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    required
+                    placeholder="Your full name"
+                    class="w-full px-4 py-3 rounded-xl bg-black/55 border border-white/15 focus:border-white/40 focus:outline-none text-white placeholder:text-white/40 text-sm transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label for="contact-email" class="block text-xs font-medium uppercase tracking-wider text-white/75 mb-1.5">Email</label>
+                  <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="you@example.com"
+                    class="w-full px-4 py-3 rounded-xl bg-black/55 border border-white/15 focus:border-white/40 focus:outline-none text-white placeholder:text-white/40 text-sm transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label for="contact-message" class="block text-xs font-medium uppercase tracking-wider text-white/75 mb-1.5">Message</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Tell me about your video, documentary, or web project..."
+                    class="w-full px-4 py-3 rounded-xl bg-black/55 border border-white/15 focus:border-white/40 focus:outline-none text-white placeholder:text-white/40 text-sm resize-none transition-colors"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all duration-200 active:scale-[0.99] cursor-pointer"
+                >
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+                    <path d="m21.854 2.147-10.94 10.939" />
+                  </svg>
+                  <span>Send Message</span>
+                </button>
+              </form>
+
+              <!-- Confirmation State (Hidden until submit) -->
+              <div id="formConfirmation" class="hidden py-12 text-center space-y-4">
+                <div class="w-14 h-14 mx-auto rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300">
+                  <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <h4 class="text-2xl font-bold text-white">Message Sent!</h4>
+                <p id="confirmationText" class="text-sm text-white/80 max-w-sm mx-auto">
+                  Thank you for reaching out. Your message has been received and Ritesh will get back to you soon.
+                </p>
+                <button
+                  id="resetFormBtn"
+                  type="button"
+                  class="mt-2 px-5 py-2.5 text-sm font-medium rounded-full bg-white/15 hover:bg-white/25 border border-white/20 text-white transition-colors cursor-pointer"
+                >
+                  Send Another Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         8. Minimal Clean Footer (No External Credits)
+    ==================================================================== -->
+    <footer data-stop-bg class="border-t border-white/10 bg-black/50 backdrop-blur-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white/70">
+        <p>&copy; 2026 Ritesh Dev. All rights reserved.</p>
+        <button
+          id="backToTopBtn"
+          type="button"
+          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white text-xs font-medium transition-colors cursor-pointer"
+        >
+          <span>Back to Top</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 12 7-7 7 7" />
+            <path d="M12 19V5" />
+          </svg>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ======================================================================
+       Vanilla JS: 60fps 3D Neon Tubes Engine & Portfolio Interactivity
+  ====================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // --------------------------------------------------------------------
+      // 1. Color Utilities (HSL -> Hex, Hex -> RGB, Vibrant Neon Generator)
+      // --------------------------------------------------------------------
+      const DEFAULT_TUBE_COLORS = ['#f967fb', '#53bc28', '#6958d5'];
+      const DEFAULT_LIGHT_COLORS = ['#83f36e', '#fe8a2e', '#ff008a', '#60aed5'];
+
+      function hslToHex(h, s, l) {
+        const sNorm = s / 100;
+        const lNorm = l / 100;
+        const c = (1 - Math.abs(2 * lNorm - 1)) * sNorm;
+        const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+        const m = lNorm - c / 2;
+
+        let r = 0, g = 0, b = 0;
+        if (h < 60) { r = c; g = x; b = 0; }
+        else if (h < 120) { r = x; g = c; b = 0; }
+        else if (h < 180) { r = 0; g = c; b = x; }
+        else if (h < 240) { r = 0; g = x; b = c; }
+        else if (h < 300) { r = x; g = 0; b = c; }
+        else { r = c; g = 0; b = x; }
+
+        const toHex = (val) => Math.round((val + m) * 255).toString(16).padStart(2, '0');
+        return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+      }
+
+      function generateVibrantNeonPalette(count) {
+        const baseHue = Math.random() * 360;
+        const step = 360 / count;
+        const result = [];
+        for (let i = 0; i < count; i++) {
+          const jitter = (Math.random() - 0.5) * (step * 0.45);
+          const hue = (baseHue + i * step + jitter + 360) % 360;
+          const saturation = 88 + Math.random() * 12;
+          const lightness = 54 + Math.random() * 10;
+          result.push(hslToHex(hue, saturation, lightness));
+        }
+        return result;
+      }
+
+      function hexToRgb(hex) {
+        const clean = hex.replace('#', '');
+        const num = parseInt(clean, 16);
+        return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
+      }
+
+      // Active Neon State
+      let isColorsLocked = false;
+      let targetTubeRgb = DEFAULT_TUBE_COLORS.map(hexToRgb);
+      let targetLightRgb = DEFAULT_LIGHT_COLORS.map(hexToRgb);
+      const currentTubeRgb = targetTubeRgb.map((rgb) => [...rgb]);
+      const currentLightRgb = targetLightRgb.map((rgb) => [...rgb]);
+      let toastTimeout = null;
+
+      function syncCssVariables(tubeHexColors) {
+        const root = document.documentElement;
+        root.style.setProperty('--neon-1', tubeHexColors[0]);
+        root.style.setProperty('--neon-2', tubeHexColors[1]);
+        root.style.setProperty('--neon-3', tubeHexColors[2]);
+      }
+
+      function showPaletteToast(tubeHexColors) {
+        const toast = document.getElementById('paletteToast');
+        const swatches = document.getElementById('toastSwatches');
+        if (!toast || !swatches) return;
+
+        swatches.innerHTML = tubeHexColors
+          .map(
+            (hex) => `
+              <div class="flex items-center gap-1.5">
+                <span class="w-3.5 h-3.5 rounded-full border border-white/30" style="background-color:${hex};box-shadow:0 0 10px ${hex};"></span>
+                <span class="text-[11px] font-mono uppercase text-white/90 hidden sm:inline">${hex}</span>
+              </div>
+            `
+          )
+          .join('');
+
+        toast.classList.remove('toast-hidden');
+        toast.classList.add('toast-visible');
+
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('toast-visible');
+          toast.classList.add('toast-hidden');
+        }, 3400);
+      }
+
+      function randomizeNeonPalette() {
+        const nextTubes = generateVibrantNeonPalette(3);
+        const nextLights = generateVibrantNeonPalette(4);
+        targetTubeRgb = nextTubes.map(hexToRgb);
+        targetLightRgb = nextLights.map(hexToRgb);
+        syncCssVariables(nextTubes);
+        showPaletteToast(nextTubes);
+      }
+
+      // Initialize CSS variables on boot
+      syncCssVariables(DEFAULT_TUBE_COLORS);
+
+      // --------------------------------------------------------------------
+      // 2. Self-Contained 60fps 3D Neon Tubes Canvas Engine
+      // --------------------------------------------------------------------
+      function initNeonCanvas() {
+        const canvas = document.getElementById('neonCanvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d', { alpha: false });
+        if (!ctx) return;
+
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        let dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        function resizeCanvas() {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          dpr = Math.min(window.devicePixelRatio || 1, 2);
+          canvas.width = Math.floor(width * dpr);
+          canvas.height = Math.floor(height * dpr);
+          canvas.style.width = width + 'px';
+          canvas.style.height = height + 'px';
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Pointer & organic idle state
+        const pointer = {
+          x: 0,
+          y: 0,
+          lastMoveTime: 0,
+          hasInteracted: false,
+          idleBlend: 1,
+        };
+
+        function updatePointer(clientX, clientY) {
+          pointer.x = clientX - width * 0.5;
+          pointer.y = clientY - height * 0.5;
+          pointer.lastMoveTime = performance.now();
+          pointer.hasInteracted = true;
+        }
+
+        window.addEventListener('pointermove', (e) => updatePointer(e.clientX, e.clientY), { passive: true });
+        window.addEventListener(
+          'touchmove',
+          (e) => {
+            if (e.touches && e.touches.length > 0) {
+              updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+            }
+          },
+          { passive: true }
+        );
+
+        // 5 Intertwined 3D Neon Tubes
+        const TUBE_COUNT = 5;
+        const POINTS_PER_TUBE = 42;
+        const FOV = 540;
+        const CHUNKS = 7;
+
+        const tubes = Array.from({ length: TUBE_COUNT }, (_, i) => {
+          const angle = (i / TUBE_COUNT) * Math.PI * 2;
+          const points = Array.from({ length: POINTS_PER_TUBE }, (_, j) => ({
+            x: Math.cos(angle + j * 0.14) * (40 + j * 3),
+            y: Math.sin(angle + j * 0.14) * (30 + j * 2.5),
+            z: Math.sin(angle + j * 0.2) * 80,
+            vx: 0,
+            vy: 0,
+            vz: 0,
+          }));
+
+          return {
+            points,
+            colorIdx: i % 3,
+            lightIdx: i % 4,
+            phase: angle,
+            orbitSpeed: 1.55 + i * 0.22,
+            orbitRadius: 24 + (i % 3) * 14,
+            zAmplitude: 95 + (i % 2) * 45,
+            headSpring: 0.085 + i * 0.008,
+            headDamping: 0.78 - i * 0.012,
+            followRate: 0.36 - i * 0.018,
+            baseWidth: 11.5 - i * 0.85,
+          };
+        });
+
+        const projected = Array.from({ length: POINTS_PER_TUBE }, () => ({ x: 0, y: 0, scale: 1 }));
+
+        function traceSplineChunk(pts, startIdx, endIdx, offsetX, offsetY) {
+          ctx.beginPath();
+          const first = pts[startIdx];
+          ctx.moveTo(first.x + offsetX, first.y + offsetY);
+
+          for (let k = startIdx + 1; k < endIdx; k++) {
+            const curr = pts[k];
+            const next = pts[k + 1];
+            const midX = (curr.x + next.x) * 0.5 + offsetX;
+            const midY = (curr.y + next.y) * 0.5 + offsetY;
+            ctx.quadraticCurveTo(curr.x + offsetX, curr.y + offsetY, midX, midY);
+          }
+
+          const last = pts[endIdx];
+          ctx.lineTo(last.x + offsetX, last.y + offsetY);
+        }
+
+        const startTime = performance.now();
+
+        function animate(now) {
+          const t = (now - startTime) * 0.001;
+
+          // Smoothly morph RGB colors toward active target palette
+          for (let i = 0; i < 3; i++) {
+            for (let c = 0; c < 3; c++) {
+              currentTubeRgb[i][c] += (targetTubeRgb[i][c] - currentTubeRgb[i][c]) * 0.08;
+            }
+          }
+          for (let i = 0; i < 4; i++) {
+            for (let c = 0; c < 3; c++) {
+              currentLightRgb[i][c] += (targetLightRgb[i][c] - currentLightRgb[i][c]) * 0.08;
+            }
+          }
+
+          // Smooth Lissajous idle animation on load and after 2s of inactivity
+          const shouldIdle = !pointer.hasInteracted || now - pointer.lastMoveTime > 2000;
+          const targetIdle = shouldIdle ? 1 : 0;
+          pointer.idleBlend += (targetIdle - pointer.idleBlend) * (shouldIdle ? 0.025 : 0.12);
+
+          const rx = Math.min(width * 0.28, 360);
+          const ry = Math.min(height * 0.24, 220);
+          const idleX = Math.sin(t * 0.78) * rx + Math.cos(t * 0.39) * (rx * 0.32);
+          const idleY = Math.sin(t * 1.24) * ry * 0.8 + Math.sin(t * 0.52) * (ry * 0.22);
+          const idleZ = Math.cos(t * 0.92) * 125;
+
+          const leadX = pointer.x * (1 - pointer.idleBlend) + idleX * pointer.idleBlend;
+          const leadY = pointer.y * (1 - pointer.idleBlend) + idleY * pointer.idleBlend;
+          const leadZ = idleZ * pointer.idleBlend + Math.sin(t * 1.4) * 55 * (1 - pointer.idleBlend);
+
+          // Clear canvas with deep #050508 backdrop
+          ctx.globalCompositeOperation = 'source-over';
+          ctx.fillStyle = '#050508';
+          ctx.fillRect(0, 0, width, height);
+
+          // Additive neon blending
+          ctx.globalCompositeOperation = 'lighter';
+
+          const halfW = width * 0.5;
+          const halfH = height * 0.5;
+
+          // Pass A: Ambient light blooms
+          for (let i = 0; i < 4; i++) {
+            const lr = currentLightRgb[i][0] | 0;
+            const lg = currentLightRgb[i][1] | 0;
+            const lb = currentLightRgb[i][2] | 0;
+            const orbitAngle = t * (0.65 + i * 0.18) + i * (Math.PI * 0.5);
+            const offsetDist = 70 + i * 38;
+            const bx = halfW + leadX * 0.85 + Math.cos(orbitAngle) * offsetDist;
+            const by = halfH + leadY * 0.85 + Math.sin(orbitAngle * 1.15) * (offsetDist * 0.72);
+            const radius = Math.min(width, height) * (0.28 + (i % 2) * 0.09);
+
+            const grad = ctx.createRadialGradient(bx, by, 0, bx, by, radius);
+            grad.addColorStop(0, `rgba(${lr}, ${lg}, ${lb}, 0.15)`);
+            grad.addColorStop(0.45, `rgba(${lr}, ${lg}, ${lb}, 0.05)`);
+            grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+            ctx.fillStyle = grad;
+            ctx.fillRect(bx - radius, by - radius, radius * 2, radius * 2);
+          }
+
+          // Pass B: 3D Spring Physics & Multi-Layer Neon Tubes
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+
+          for (let i = 0; i < TUBE_COUNT; i++) {
+            const tube = tubes[i];
+            const pts = tube.points;
+
+            const helixAngle = t * tube.orbitSpeed + tube.phase;
+            const targetX = leadX + Math.cos(helixAngle) * tube.orbitRadius;
+            const targetY = leadY + Math.sin(helixAngle * 1.12) * (tube.orbitRadius * 0.85);
+            const targetZ = leadZ + Math.sin(helixAngle * 0.85) * tube.zAmplitude;
+
+            const head = pts[0];
+            head.vx = (head.vx + (targetX - head.x) * tube.headSpring) * tube.headDamping;
+            head.vy = (head.vy + (targetY - head.y) * tube.headSpring) * tube.headDamping;
+            head.vz = (head.vz + (targetZ - head.z) * tube.headSpring) * tube.headDamping;
+            head.x += head.vx;
+            head.y += head.vy;
+            head.z += head.vz;
+
+            for (let j = 1; j < POINTS_PER_TUBE; j++) {
+              const prev = pts[j - 1];
+              const curr = pts[j];
+              const waveFactor = (j / POINTS_PER_TUBE) * 1.35;
+              const swirlX = Math.cos(t * 2.1 - j * 0.24 + tube.phase) * waveFactor;
+              const swirlY = Math.sin(t * 1.85 - j * 0.22 + tube.phase) * waveFactor;
+              const swirlZ = Math.cos(t * 1.6 - j * 0.2 + tube.phase) * (waveFactor * 1.8);
+
+              curr.x += (prev.x - curr.x) * tube.followRate + swirlX;
+              curr.y += (prev.y - curr.y) * tube.followRate + swirlY;
+              curr.z += (prev.z - curr.z) * tube.followRate + swirlZ;
+            }
+
+            for (let j = 0; j < POINTS_PER_TUBE; j++) {
+              const p = pts[j];
+              const clampedZ = Math.max(-FOV * 0.55, Math.min(FOV * 1.2, p.z));
+              const scale = FOV / (FOV + clampedZ);
+              projected[j].x = halfW + p.x * scale;
+              projected[j].y = halfH + p.y * scale;
+              projected[j].scale = scale;
+            }
+
+            const tr = currentTubeRgb[tube.colorIdx][0] | 0;
+            const tg = currentTubeRgb[tube.colorIdx][1] | 0;
+            const tb = currentTubeRgb[tube.colorIdx][2] | 0;
+            const lr = currentLightRgb[tube.lightIdx][0] | 0;
+            const lg = currentLightRgb[tube.lightIdx][1] | 0;
+            const lb = currentLightRgb[tube.lightIdx][2] | 0;
+
+            const tubeColorStr = `${tr}, ${tg}, ${tb}`;
+            const lightColorStr = `${lr}, ${lg}, ${lb}`;
+
+            for (let c = CHUNKS - 1; c >= 0; c--) {
+              const startIdx = Math.floor((c / CHUNKS) * (POINTS_PER_TUBE - 1));
+              const endIdx = Math.min(
+                POINTS_PER_TUBE - 1,
+                Math.floor(((c + 1) / CHUNKS) * (POINTS_PER_TUBE - 1)) + 1
+              );
+              if (endIdx <= startIdx) continue;
+
+              const progress = (c + 0.5) / CHUNKS;
+              const taper = Math.pow(1 - progress, 0.72) * 0.88 + 0.12;
+              const avgScale = projected[Math.floor((startIdx + endIdx) * 0.5)].scale;
+              const coreWidth = Math.max(1.4, tube.baseWidth * taper * avgScale);
+              const tailFade = 0.25 + 0.75 * (1 - progress * 0.85);
+
+              // Layer 1: Wide ambient neon halo
+              ctx.shadowBlur = 0;
+              ctx.strokeStyle = `rgba(${lightColorStr}, ${(0.11 * tailFade).toFixed(3)})`;
+              ctx.lineWidth = coreWidth * 4.4;
+              traceSplineChunk(projected, startIdx, endIdx, 0, 0);
+              ctx.stroke();
+
+              // Layer 2: Outer neon glow
+              ctx.shadowColor = `rgba(${tubeColorStr}, 0.85)`;
+              ctx.shadowBlur = 22 * avgScale;
+              ctx.strokeStyle = `rgba(${tubeColorStr}, ${(0.38 * tailFade).toFixed(3)})`;
+              ctx.lineWidth = coreWidth * 2.15;
+              traceSplineChunk(projected, startIdx, endIdx, 0, 0);
+              ctx.stroke();
+
+              // Layer 3: Vibrant metallic neon core
+              ctx.shadowBlur = 8 * avgScale;
+              ctx.strokeStyle = `rgba(${tubeColorStr}, ${(0.92 * tailFade).toFixed(3)})`;
+              ctx.lineWidth = coreWidth;
+              traceSplineChunk(projected, startIdx, endIdx, 0, 0);
+              ctx.stroke();
+
+              // Layer 4: Glossy white specular highlight ridge
+              ctx.shadowBlur = 0;
+              ctx.strokeStyle = `rgba(255, 255, 255, ${(0.88 * tailFade).toFixed(3)})`;
+              ctx.lineWidth = Math.max(0.8, coreWidth * 0.28);
+              traceSplineChunk(projected, startIdx, endIdx, -coreWidth * 0.14, -coreWidth * 0.14);
+              ctx.stroke();
+            }
+          }
+
+          ctx.shadowBlur = 0;
+          window.requestAnimationFrame(animate);
+        }
+
+        window.requestAnimationFrame(animate);
+      }
+
+      // --------------------------------------------------------------------
+      // 3. UI Interactivity & Event Wiring
+      // --------------------------------------------------------------------
+      function initUI() {
+        // Stop click propagation on all interactive containers so clicking UI never randomizes background
+        document.querySelectorAll('[data-stop-bg]').forEach((el) => {
+          el.addEventListener('click', (e) => e.stopPropagation());
+        });
+
+        // Open background click randomizes neon (when unlocked)
+        document.body.addEventListener('click', () => {
+          if (!isColorsLocked) {
+            randomizeNeonPalette();
+          }
+        });
+
+        // Navbar "Randomize Neon" button
+        const randomizeBtn = document.getElementById('randomizeBtn');
+        if (randomizeBtn) {
+          randomizeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            randomizeNeonPalette();
+          });
+        }
+
+        // Navbar Lock/Unlock toggle
+        const lockToggleBtn = document.getElementById('lockToggleBtn');
+        const iconUnlocked = document.getElementById('iconUnlocked');
+        const iconLocked = document.getElementById('iconLocked');
+        if (lockToggleBtn && iconUnlocked && iconLocked) {
+          lockToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isColorsLocked = !isColorsLocked;
+            if (isColorsLocked) {
+              iconUnlocked.classList.add('hidden');
+              iconLocked.classList.remove('hidden');
+              lockToggleBtn.classList.remove('bg-white/10', 'border-white/20', 'text-white');
+              lockToggleBtn.classList.add('bg-black/50', 'border-white/10', 'text-white/45');
+              lockToggleBtn.title = 'Background click-to-randomize: LOCKED (OFF)';
+            } else {
+              iconLocked.classList.add('hidden');
+              iconUnlocked.classList.remove('hidden');
+              lockToggleBtn.classList.remove('bg-black/50', 'border-white/10', 'text-white/45');
+              lockToggleBtn.classList.add('bg-white/10', 'border-white/20', 'text-white');
+              lockToggleBtn.title = 'Background click-to-randomize: UNLOCKED (ON)';
+            }
+          });
+        }
+
+        // Mobile Navigation Drawer
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const iconMenuOpen = document.getElementById('iconMenuOpen');
+        const iconMenuClose = document.getElementById('iconMenuClose');
+
+        function setMobileMenu(open) {
+          if (!mobileMenu || !iconMenuOpen || !iconMenuClose) return;
+          if (open) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            iconMenuOpen.classList.add('hidden');
+            iconMenuClose.classList.remove('hidden');
+          } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            iconMenuOpen.classList.remove('hidden');
+            iconMenuClose.classList.add('hidden');
+          }
+        }
+
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setMobileMenu(mobileMenu.classList.contains('hidden'));
+          });
+
+          document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+            link.addEventListener('click', () => setMobileMenu(false));
+          });
+        }
+
+        // Filterable Projects
+        const filterBtns = document.querySelectorAll('.project-filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const selected = btn.getAttribute('data-filter');
+
+            // Update active pill styling
+            filterBtns.forEach((b) => {
+              const isSelected = b === btn;
+              b.classList.toggle('bg-white', isSelected);
+              b.classList.toggle('text-black', isSelected);
+              b.classList.toggle('shadow-md', isSelected);
+              b.classList.toggle('text-white/80', !isSelected);
+              b.classList.toggle('hover:text-white', !isSelected);
+              b.classList.toggle('hover:bg-white/10', !isSelected);
+            });
+
+            // Show/hide matching project cards
+            projectCards.forEach((card) => {
+              const cats = (card.getAttribute('data-categories') || '').split(',');
+              const isFeatured = card.getAttribute('data-featured') === 'true';
+              const match = selected === 'All' || cats.includes(selected);
+
+              if (match) {
+                card.classList.remove('hidden');
+                if (isFeatured) {
+                  card.classList.toggle('md:col-span-2', selected === 'All');
+                }
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          });
+        });
+
+        // One-Click Copy to Clipboard (with execCommand fallback for iframe/browser compatibility)
+        document.querySelectorAll('.copy-btn').forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const textToCopy = btn.getAttribute('data-copy');
+            if (!textToCopy) return;
+
+            let copied = false;
+            try {
+              const textarea = document.createElement('textarea');
+              textarea.value = textToCopy;
+              textarea.setAttribute('readonly', '');
+              textarea.style.position = 'fixed';
+              textarea.style.opacity = '0';
+              document.body.appendChild(textarea);
+              textarea.select();
+              copied = document.execCommand('copy');
+              document.body.removeChild(textarea);
+            } catch (_) {
+              copied = false;
+            }
+
+            if (!copied && navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(textToCopy).catch(() => {});
+            }
+
+            const copyIcon = btn.querySelector('.copy-icon');
+            const checkIcon = btn.querySelector('.check-icon');
+            const label = btn.querySelector('.copy-label');
+
+            if (copyIcon) copyIcon.classList.add('hidden');
+            if (checkIcon) checkIcon.classList.remove('hidden');
+            if (label) label.textContent = 'Copied!';
+
+            setTimeout(() => {
+              if (copyIcon) copyIcon.classList.remove('hidden');
+              if (checkIcon) checkIcon.classList.add('hidden');
+              if (label) label.textContent = 'Copy';
+            }, 2200);
+          });
+        });
+
+        // Interactive Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const formConfirmation = document.getElementById('formConfirmation');
+        const confirmationText = document.getElementById('confirmationText');
+        const resetFormBtn = document.getElementById('resetFormBtn');
+
+        if (contactForm && formConfirmation) {
+          contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const nameInput = document.getElementById('contact-name');
+            const senderName = nameInput ? nameInput.value.trim() : '';
+            if (confirmationText) {
+              confirmationText.textContent = senderName
+                ? `Thank you for reaching out, ${senderName}. Your message has been received and Ritesh will get back to you soon.`
+                : 'Thank you for reaching out. Your message has been received and Ritesh will get back to you soon.';
+            }
+            contactForm.classList.add('hidden');
+            formConfirmation.classList.remove('hidden');
+          });
+        }
+
+        if (resetFormBtn && contactForm && formConfirmation) {
+          resetFormBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            contactForm.reset();
+            formConfirmation.classList.add('hidden');
+            contactForm.classList.remove('hidden');
+          });
+        }
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        if (backToTopBtn) {
+          backToTopBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+      }
+
+      // Start canvas animation & UI on window load
+      window.addEventListener('load', () => {
+        initNeonCanvas();
+        initUI();
+      });
+    })();
+  </script>
+</body>
+</html>
